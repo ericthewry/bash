@@ -18,7 +18,7 @@ PS1='\u \w$(__git_ps1) $ '
 #  esac
 #}
 
-alias sourceme='source ~/.bash_profile'
+alias sourceme="source $HOME/.bash_profile"
 alias hello='echo "Hello World!"'
 
 alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
@@ -27,8 +27,8 @@ alias FUCK='fuck'
 
 # navigation helpers
 alias devserve='gotomathswipe && npm run devserve'
-alias gotomathswipe='cd ~/dev/math-swipe/mathswipe'
-alias gotospv3='cd ~/dev/superpoints/spv3'
+alias gotomathswipe="cd $HOME/dev/math-swipe/mathswipe"
+alias gotospv3="cd $HOME/dev/superpoints/spv3"
 alias mathswipe='gotomathswipe && git status'
 alias spv3='gotospv3 && git status'
 
@@ -53,21 +53,21 @@ alias new='git checkout -b'
 alias old='git checkout'
 add () {
   if [ -z "$1" ]
-  then 
+  then
     echo "-Parameter #1 is zero length.-"  # Or no parameter passed.
   else
     for arg in "$@"
     do
-      git add "$arg" 
+      git add "$arg"
     done
   fi
   status
-  return 0 
+  return 0
 }
 
 
 # to open this file
-alias fuckaround='vim ~/.bash_profile'
+alias fuckaround="vim $HOME/.bash_profile"
 
 # Sublime text helpers
 alias subtwo='subl'
