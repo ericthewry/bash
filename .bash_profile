@@ -22,8 +22,6 @@ alias sourceme="source $HOME/.bash_profile"
 alias hello='echo "Hello World!"'
 
 alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
-# You can use whatever you want as an alias, like for Mondays:
-alias FUCK='fuck'
 
 # navigation helpers
 alias devserve='gotomathswipe && npm run devserve'
@@ -31,10 +29,6 @@ alias gotomathswipe="cd $HOME/dev/math-swipe/mathswipe"
 alias gotospv3="cd $HOME/dev/superpoints/spv3"
 alias mathswipe='gotomathswipe && git status'
 alias spv3='gotospv3 && git status'
-
-# test helpers
-alias spec='gotospv3 && rspec spec'
-alias mocks='gotospv3 && rspec spec_rspec_mocks'
 
 # git helpers
 alias branches='git branch -vv'
@@ -51,6 +45,8 @@ alias ILLBEBACK='git stash'
 alias IMBACK='git stash apply'
 alias new='git checkout -b'
 alias old='git checkout'
+alias amend='git commit --amend'
+
 add () {
   if [ -z "$1" ]
   then
@@ -65,9 +61,42 @@ add () {
   return 0
 }
 
+spms () {
+  spm
+  sps
+  return 0    
+}
+
+spsm () {
+  sps
+  spm
+}
+
+# test helpers
+sps () {
+  gotospv3
+  rspec spec
+  return 0
+}
+
+spm () {
+  gotospv3
+  rspec spec_rspec_mocks
+  return 0
+}
+
+# looping tests
+testloop () {
+  while true; do
+    rspec spec -fd
+    rspec spec_rspec_mocks -fd
+  done
+}
+
 
 # to open this file
-alias fuckaround="vim $HOME/.bash_profile"
+alias optimize="vim $HOME/.bash_profile"
+
 
 # Sublime text helpers
 alias subtwo='subl'
