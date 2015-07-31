@@ -50,6 +50,11 @@ alias new='git checkout -b'
 alias old='git checkout'
 alias amend='git commit --amend'
 
+# git auto-complete
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 add () {
   if [ -z "$1" ]
   then
@@ -99,7 +104,7 @@ testloop () {
 
 # to open this file
 alias optimize="vim $HOME/.bash_profile"
-
+alias mrup='cd $HOME && mr -j8 up && cd -'
 
 # Sublime text helpers
 alias subtwo='subl'
