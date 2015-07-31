@@ -1,5 +1,7 @@
 source ~/.git-prompt.sh
-PS1='\u \w$(__git_ps1) $ '
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='\u \w$(__git_ps1) \$ '
+
 #eval export PATH="/Users/originate/.rbenv/shims:${PATH}"
 #source "/usr/local/Cellar/rbenv/0.4.0/libexec/../completions/rbenv.bash"
 #rbenv rehash 2>/dev/null
@@ -17,6 +19,7 @@ PS1='\u \w$(__git_ps1) $ '
 #    command rbenv "$command" "$@";;
 #  esac
 #}
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 alias sourceme="source $HOME/.bash_profile"
 alias hello='echo "Hello World!"'
