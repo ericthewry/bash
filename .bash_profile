@@ -21,9 +21,16 @@ export PS1='\u \w$(__git_ps1) \$ '
 #}
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-alias sourceme="source $HOME/.bash_profile"
-alias hello='echo "Hello World!"'
+# listing helpers
+alias ls='ls -AFG'
+alias ll='ls -lAFG'
 
+# Editing helpers 
+alias sourceme="source $HOME/.bash_profile"
+alias optimize="vim $HOME/.bash_profile"
+alias mrup='cd $HOME && mr -j8 up && cd -'
+
+# Fuck
 alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
 
 # navigation helpers
@@ -100,11 +107,6 @@ testloop () {
     rspec spec_rspec_mocks -fd
   done
 }
-
-
-# to open this file
-alias optimize="vim $HOME/.bash_profile"
-alias mrup='cd $HOME && mr -j8 up && cd -'
 
 # Sublime text helpers
 alias subtwo='subl'
